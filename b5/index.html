@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+        <div>
+            <label>String</label>
+            <input type="text" value="fpt poly">
+        </div>
+        <div>
+            <button type="button">Convert</button>
+        </div>
+    </div>
+
+    <h1 class="result">fptPoly</h1>
+
+    <script>
+        var button = document.querySelector('button');
+        var result = document.querySelector('.result');
+
+        button.onclick = function(){
+            var text = document.querySelector('input').value
+            text = text.replaceAll(/\W+(.)/gm, function(char) {
+                return char.toUpperCase();
+            }).replaceAll(/\W/gm, '')
+            
+            result.innerText = text;
+        }
+    </script>
+</body>
+</html>
